@@ -1,0 +1,11 @@
+services:
+  tfenv:
+    build:
+      context: ./
+      dockerfile: tfenv/Dockerfile
+    volumes:
+      - type: bind
+        source: code
+        target: /code
+    environment:
+      TFENV_CONFIG_DIR: /var/lib/tfenv-versions/
